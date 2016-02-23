@@ -19,6 +19,12 @@ class ActivityController extends Controller {
 		return view('activities.index', compact('activities'));
 	}
 
+    public function indexApi()
+    {
+		$activities = Activity::all();
+        return $activities;
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

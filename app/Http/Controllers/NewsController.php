@@ -24,6 +24,12 @@ class NewsController extends Controller {
 
 	}
 
+    public function indexApi()
+    {
+		$news = News::all();
+        return $news;
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
