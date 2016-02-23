@@ -13,7 +13,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            @if($news->count())
+            @if($newses->count())
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
@@ -25,11 +25,11 @@
                     </thead>
 
                     <tbody>
-                        @foreach($news as $news)
+                        @foreach($newses as $news)
                             <tr>
                                 <td>{{$news->id}}</td>
                                 <td>{{$news->title}}</td>
-                    <td>{{$news->content}}</td>
+                                <td>{{$news->content}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('news.show', $news->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('news.edit', $news->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>
@@ -43,7 +43,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $news->render() !!}
+                {!! $newses->render() !!}
             @else
                 <h3 class="text-center alert alert-info">Empty!</h3>
             @endif

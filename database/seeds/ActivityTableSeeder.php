@@ -12,7 +12,7 @@ class ActivityTableSeeder extends Seeder {
     public function run()
     {
         DB::table('activities')->delete();
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 25; $i++) {
             Activity::create(array(
                 'title' => str_random(10),
                 'introduction' => str_random(10),

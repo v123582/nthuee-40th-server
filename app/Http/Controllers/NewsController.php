@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\News;
+use App\Activity;
+
 use Illuminate\Http\Request;
 
 class NewsController extends Controller {
@@ -15,9 +17,11 @@ class NewsController extends Controller {
 	 */
 	public function index()
 	{
-		$news = News::orderBy('id', 'desc')->paginate(10);
+		// $news = News::orderBy('id', 'desc')->paginate(10);
+		// return view('news.index', compact('news'));
+		$newses = News::orderBy('id', 'desc')->paginate(10);
+		return view('news.index', compact('newses'));
 
-		return view('news.index', compact('news'));
 	}
 
 	/**

@@ -16,7 +16,6 @@ class ActivityController extends Controller {
 	public function index()
 	{
 		$activities = Activity::orderBy('id', 'desc')->paginate(10);
-
 		return view('activities.index', compact('activities'));
 	}
 

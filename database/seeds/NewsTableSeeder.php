@@ -11,8 +11,8 @@ class NewsTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('activities')->delete();
-        for ($i = 1; $i <= 10; $i++) {
+        DB::table('news')->delete();
+        for ($i = 1; $i <= 25; $i++) {
             News::create(array(
                 'title' => str_random(10),
                 'content' => str_random(10),
