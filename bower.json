@@ -1,0 +1,21 @@
+{
+  "name": "nthuee-40th",
+  "description": "",
+  "main": "",
+  "authors": [
+    "v123582 <v123582@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/v123582/nthuee-40th-server",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.5"
+  }
+}
