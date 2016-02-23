@@ -29,3 +29,6 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::resource("activities","ActivityController");
+Route::resource("news","NewsController");
