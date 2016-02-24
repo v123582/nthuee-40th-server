@@ -1,4 +1,5 @@
-@extends('layout')
+@extends('layouts.app')
+
 @section('header')
 <div class="page-header">
         <h1>News / Show #{{$news->id}}</h1>
