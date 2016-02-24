@@ -40,6 +40,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
 Route::group(['middleware' => ['auth:api']], function () {
 
+	Route::get('api/basic', function(){ 
+		return ''; 
+	});
 	Route::post('api/basic', function()
 	{
 	    // Grab our files input
