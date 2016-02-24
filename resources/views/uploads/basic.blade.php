@@ -67,7 +67,8 @@
             dataType: 'json',
             done: function (e, data) {
                 $.each(data.result.files, function (index, file) {
-                    $('<p/>').text(file.name).appendTo('#files');
+                    var fileSrc = '<img src="'+file.name+'" height="64px" width="64px">'
+                    $('#files').append(fileSrc);
                 });
             },
             progressall: function (e, data) {
