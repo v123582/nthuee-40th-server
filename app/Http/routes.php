@@ -51,10 +51,11 @@ Route::group(['middleware' => ['auth:api']], function () {
 	    $results = array();
 
 	    foreach ($files as $file) {
+	    	$fileName = time().'-'.str_random(3).'-'.$file->getClientOriginalName();
 	        // store our uploaded file in our uploads folder
-	        $file->move($uploadPath, $file->getClientOriginalName());
+	        $file->move($uploadPath, $fileName);
 	        // set our results to have our asset path
-	        $name = $assetPath . '/' . $file->getClientOriginalName();
+	        $name = $assetPath . '/' . $fileName;
 	        $results[] = compact('name');
 	    }
 

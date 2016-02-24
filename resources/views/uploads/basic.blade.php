@@ -60,7 +60,6 @@
     /*global window, $ */
     $(function () {
         'use strict';
-        alert( '{{ $api_token }}' );
         // Change this to the location of your server-side upload handler:
         var url = 'api/basic?api_token={{ $api_token }}';
         $('#fileupload').fileupload({
