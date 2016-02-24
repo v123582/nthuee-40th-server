@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="bower_compoents/blueimp-file-upload/css/jquery.fileupload.css">
 
     <style>
         body {
@@ -50,6 +51,7 @@
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="news">News</a></li>
                     <li><a href="activities">Activities</a></li>
+                    <li><a href="photos">Photos</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -84,5 +86,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    </script>
+    <script>
+    /*jslint unparam: true */
+    /*global window, $ */
+    $(function () {
+        'use strict';
+        alert( '{{ $api_token }}' );
+        // Change this to the location of your server-side upload handler:
+        var url = 'api/basic?api_token={{ $api_token }}';
+        $('#fileupload').fileupload({
+            url: url,
+            dataType: 'json',
+            done: function (e, data) {
+                $.each(data.result.files, function (index, file) {
+                    $('<p/>').text(file.name).appendTo('#files');
+                });
+            },
+            progressall: function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#progress .progress-bar').css(
+                    'width',
+                    progress + '%'
+                );
+            }
+        }).prop('disabled', !$.support.fileInput)
+            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+    });
+    </script>                  
+
 </body>
 </html>

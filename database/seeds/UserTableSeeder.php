@@ -14,6 +14,7 @@ class UserTableSeeder extends Seeder {
         	'name' => 'admin',
             'email'    => 'admin',
             'password' => Hash::make('admin'),
+            'api_token'=> str_random(60),
         ]);
     }
 }
