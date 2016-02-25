@@ -51,9 +51,34 @@ Route::group(['middleware' => ['auth:api']], function () {
 Route::group(['middleware' => 'web'], function () {
 
     Route::auth();
+    Route::get('/register', function () {
+	    return view('errors/404');
+	});
     Route::get('/home', 'HomeController@index');
     Route::get('api/activities', 'ActivityController@indexApi');
     Route::get('api/news', 'NewsController@indexApi');
    	Route::get('api/photos', 'FileController@indexApi');
+
+   	Route::get('/', function () {
+	    return view('clients/index');
+	});
+   	Route::get('/index.html', function () {
+	    return view('clients/index');
+	});
+   	Route::get('/about.html', function () {
+	    return view('clients/about');
+	});
+   	Route::get('/activities.html', function () {
+	    return view('clients/activities');
+	});
+   	Route::get('/activity.html', function () {
+	    return view('clients/activity');
+	});
+   	Route::get('/news.html', function () {
+	    return view('clients/news');
+	});
+   	Route::get('/template.html', function () {
+	    return view('clients/coming-soon');
+	});
 
 });
