@@ -34,15 +34,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 	Route::resource("activities", "ActivityController");
 	Route::resource("news", "NewsController");
 	
-	Route::get('photos', function() { return View::make('uploads.basic')->with('api_token', Auth::user()->api_token);});
-
+	Route::get('photos/upload', function() { return View::make('uploads.upload')->with('api_token', Auth::user()->api_token);});
+	Route::get('photos', function() { return View::make('uploads.index')->with('api_token', Auth::user()->api_token);});
 });
 
 Route::group(['middleware' => ['auth:api']], function () {
 
-	Route::get('api/basic', function(){ 
-		return ''; 
-	});
 	Route::post('api/basic', function()
 	{
 	    // Grab our files input

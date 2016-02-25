@@ -35,6 +35,10 @@
                                 <i class="glyphicon glyphicon-ban-circle"></i>
                                 <span>Cancel upload</span>
                             </button>
+                            <a type="button" href="/photos" class="btn btn-info">
+                                <i class="glyphicon glyphicon-th"></i>
+                                <span>所有圖片</span>
+                            </a>
                             <!-- The global file processing state -->
                             <span class="fileupload-process"></span>
                         </div>
@@ -107,12 +111,12 @@
                 <tr class="template-download fade">
                     <td>
                         <span class="preview">
-                            <img src="{%=file.name%}" width='80' height='80'>
+                            <img src="/{%=file.name%}" width='80' height='80'>
                         </span>
                     </td>
                     <td>
                         <p class="name">
-                            <a href="{%=file.name%}">{%=file.name%}</a>
+                            <a href="/{%=file.name%}">{%=file.name%}</a>
                         </p>
                     </td>
                     <td>
@@ -139,55 +143,25 @@
         </div>
     </div>
 
-
-
-<table role="presentation" class="table table-striped">
-    <tbody class="files">
-        <tr class="template-download fade in">
-            <td>
-                <span class="preview">
-                    <img src="/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png" width="80" height="80">
-                </span>
-            </td>
-            <td>
-                <p class="name">
-                    <a href="/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png">/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png</a>
-                </p>
-            </td>
-            <td>
-                <span class="size"></span>
-            </td>
-            <td>
-                
-                    <button class="btn btn-danger delete">
-                        <i class="glyphicon glyphicon-trash"></i>
-                        <span>Delete</span>
-                    </button>
-                
-            </td>
-        </tr>
-    </tbody>
-</table>
-
 @endsection
 
 @section('javascripts')
 
-    <script src="bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
 
     <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
-    <script src="bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
 
     <script>
         $(function () {

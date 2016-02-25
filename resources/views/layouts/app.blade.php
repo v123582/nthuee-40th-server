@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="bower_compoents/blueimp-file-upload/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="/bower_compoents/blueimp-file-upload/css/jquery.fileupload.css">
 
     <style>
         body {
@@ -49,9 +49,9 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="news">News</a></li>
-                    <li><a href="activities">Activities</a></li>
-                    <li><a href="photos">Photos</a></li>
+                    <li><a href="{{ url('/news') }}">News</a></li>
+                    <li><a href="{{ url('/activities') }}">Activities</a></li>
+                    <li><a href="{{ url('/photos') }}">Photos</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
