@@ -45,7 +45,10 @@ class ActivityController extends Controller {
 	{
 		$activity = new Activity();
 
+		$activity->topic = $request->input("topic");
 		$activity->title = $request->input("title");
+		$activity->time = $request->input("time");
+		$activity->location = $request->input("location");
         $activity->introduction = $request->input("introduction");
         $activity->content = $request->input("content");
         $activity->others = $request->input("others");
@@ -93,7 +96,10 @@ class ActivityController extends Controller {
 	{
 		$activity = Activity::findOrFail($id);
 
+		$activity->topic = $request->input("topic");
 		$activity->title = $request->input("title");
+		$activity->time = $request->input("time");
+		$activity->location = $request->input("location");
         $activity->introduction = $request->input("introduction");
         $activity->content = $request->input("content");
         $activity->others = $request->input("others");

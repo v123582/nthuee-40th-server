@@ -19,9 +19,9 @@
                         <tr>
                             <th>ID</th>
                             <th>TITLE</th>
-                        <th>INTRODUCTION</th>
-                        <th>CONTENT</th>
-                        <th>OTHERS</th>
+                        <th>TOPIC</th>
+                        <th>TIME</th>
+                        <th>LOCATION</th>
                         <th>URL</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
@@ -31,11 +31,11 @@
                         @foreach($activities as $activity)
                             <tr>
                                 <td>{{$activity->id}}</td>
+                                <td>{{$activity->topic}}</td>
                                 <td>{{$activity->title}}</td>
-                    <td>{{$activity->introduction}}</td>
-                    <td>{{$activity->content}}</td>
-                    <td>{{$activity->others}}</td>
-                    <td>{{$activity->url}}</td>
+                                <td>{{$activity->time}}</td>
+                                <td>{{$activity->location}}</td>
+                                <td>{{$activity->url}}</td>
                                 <td class="text-right">
                                     <a class="btn btn-xs btn-primary" href="{{ route('activities.show', $activity->id) }}"><i class="glyphicon glyphicon-eye-open"></i> View</a>
                                     <a class="btn btn-xs btn-warning" href="{{ route('activities.edit', $activity->id) }}"><i class="glyphicon glyphicon-edit"></i> Edit</a>

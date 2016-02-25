@@ -15,13 +15,41 @@
             <form action="{{ route('activities.store') }}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+
+                <div class="form-group @if($errors->has('topic')) has-error @endif">
+                  <label for="topic-field">topic</label>
+                  <input type="text" id="topic-field" name="topic" class="form-control" value="{{ old("topic") }}"/>
+                  @if($errors->has("topic"))
+                    <span class="help-block">{{ $errors->first("topic") }}</span>
+                  @endif
+                </div>
+
                 <div class="form-group @if($errors->has('title')) has-error @endif">
-                       <label for="title-field">Title</label>
-                    <input type="text" id="title-field" name="title" class="form-control" value="{{ old("title") }}"/>
-                       @if($errors->has("title"))
-                        <span class="help-block">{{ $errors->first("title") }}</span>
-                       @endif
-                    </div>
+                  <label for="title-field">Title</label>
+                  <input type="text" id="title-field" name="title" class="form-control" value="{{ old("title") }}"/>
+                  @if($errors->has("title"))
+                    <span class="help-block">{{ $errors->first("title") }}</span>
+                  @endif
+                </div>
+
+
+
+                <div class="form-group @if($errors->has('time')) has-error @endif">
+                  <label for="time-field">time</label>
+                  <input type="text" id="time-field" name="time" class="form-control" value="{{ old("time") }}"/>
+                  @if($errors->has("time"))
+                    <span class="help-block">{{ $errors->first("time") }}</span>
+                  @endif
+                </div>
+
+
+                <div class="form-group @if($errors->has('location')) has-error @endif">
+                  <label for="location-field">location</label>
+                  <input type="text" id="location-field" name="location" class="form-control" value="{{ old("location") }}"/>
+                  @if($errors->has("location"))
+                    <span class="help-block">{{ $errors->first("location") }}</span>
+                  @endif
+                </div>
                     <div class="form-group @if($errors->has('introduction')) has-error @endif">
                        <label for="introduction-field">Introduction</label>
                     <textarea class="form-control" id="introduction-field" rows="3" name="introduction">{{ old("introduction") }}</textarea>

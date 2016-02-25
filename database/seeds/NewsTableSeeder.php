@@ -12,10 +12,10 @@ class NewsTableSeeder extends Seeder {
     public function run()
     {
         DB::table('news')->delete();
-        for ($i = 1; $i <= 25; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             News::create(array(
-                'title' => str_random(10),
-                'content' => str_random(10),
+                'title' => '標題'.str_random(4),
+                'content' => '內容'.str_random(4),
             ));
         }
     }

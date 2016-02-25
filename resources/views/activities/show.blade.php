@@ -23,9 +23,23 @@
                     <label for="nome">ID</label>
                     <p class="form-control-static"></p>
                 </div>
+
+                <div class="form-group">
+                     <label for="topic">TOPIC</label>
+                     <p class="form-control-static">{{$activity->topic}}</p>
+                </div>
+
                 <div class="form-group">
                      <label for="title">TITLE</label>
                      <p class="form-control-static">{{$activity->title}}</p>
+                </div>
+                <div class="form-group">
+                     <label for="time">TIME</label>
+                     <p class="form-control-static">{{$activity->time}}</p>
+                </div>
+                <div class="form-group">
+                     <label for="location">LOCATION</label>
+                     <p class="form-control-static">{{$activity->location}}</p>
                 </div>
                     <div class="form-group">
                      <label for="introduction">INTRODUCTION</label>
