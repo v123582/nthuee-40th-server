@@ -4,3 +4,6 @@
 Homestead.yaml
 Homestead.json
 .env
+/public/bower_compoents
+/database/database.sqlite
+/public/uploads/basic
