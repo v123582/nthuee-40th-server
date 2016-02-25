@@ -113,6 +113,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
+                                <button type="button" class="btn btn-xs btn-primary panel-time">Primary</button>
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">
                                     臺大電機系70週年慶官方網站上線!
                                 </a>
@@ -121,34 +122,6 @@
                         <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                             <div class="panel-body">
                                 網址: http://70th.ee.ntu.edu.tw
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                                    臺大電機系70週年慶臉書粉絲團上線!
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false">
-                            <div class="panel-body">
-                                臺大電機系70週年慶臉書粉絲團上線!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="" aria-expanded="true">
-                                    晚宴/晚會開始報名!
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false">
-                            <div class="panel-body">
-                                晚宴/晚會開始報名!
                             </div>
                         </div>
                     </div>
@@ -180,5 +153,30 @@
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>   
+    <script type="text/javascript">
+        jQuery(function($) {
+            
+            'use strict';
+
+            console.log('===== News Html =====');
+            var url = 'http://localhost:8000/api/news';
+            $.getJSON(url, function (news) {
+                var allNews = news;
+                var panel = $('.panel-default').first().clone();
+                $('#accordion').empty();
+                allNews.forEach(function (news, index, allNews) {
+                    panel.find('a').prop('href', '#'+index)
+                    panel.find('.collapsed').html(news.title);
+                    panel.find('.panel-collapse').prop('id', index)
+                    panel.find('.panel-time').html(news['updated_at'].substring(0,10)); 
+                    panel.find('.panel-body').html(news.content); 
+                    $('#accordion').append(panel);
+                    panel = $('.panel-default').first().clone();
+                });
+
+            });
+
+        });
+    </script>
 </body>
 </html>

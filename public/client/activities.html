@@ -159,6 +159,29 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>   
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        jQuery(function($) {
+            
+            'use strict';
+
+            console.log('===== Activities Html =====');
+            var url = 'http://localhost:8000/api/activities';
+            $.getJSON(url, function (activities) {
+                var activities = activities;
+                var panel = $('tr:eq(1)').first().clone();
+                $('tbody').empty();
+                activities.forEach(function (activity, index, activities) {
+                    panel.find('th:eq(0)').html(activity.topic);
+                    panel.find('td:eq(0)').html(activity.title);
+                    panel.find('td:eq(1)').html(activity.time);
+                    panel.find('td:eq(2) a').prop('href', 'http://localhost:8000/client/activity.html?id='+activity.id);
+                    $('tbody').append(panel);
+                    panel = $('tr:eq(1)').clone();
+                });
+            });
+
+        });
+    </script>   
 </body>
 </html>
