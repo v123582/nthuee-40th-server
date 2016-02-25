@@ -111,12 +111,12 @@
                 <tr class="template-download fade">
                     <td>
                         <span class="preview">
-                            <img src="/{%=file.name%}" width='80' height='80'>
+                            <img src="{%=file.name%}" width='80' height='80'>
                         </span>
                     </td>
                     <td>
                         <p class="name">
-                            <a href="/{%=file.name%}">{%=file.name%}</a>
+                            <a href="{%=file.name%}">{%=file.name%}</a>
                         </p>
                     </td>
                     <td>
@@ -167,7 +167,7 @@
         $(function () {
             'use strict';
 
-            var url = 'api/basic?api_token={{ $api_token }}';
+            var url = '/api/photos?api_token={{ $api_token }}';
 
             // Initialize the jQuery File Upload widget:
             $('#fileupload').fileupload({

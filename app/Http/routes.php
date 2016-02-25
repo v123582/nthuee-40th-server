@@ -13,7 +13,6 @@
 
 use Illuminate\Support\Facades\Input;
 
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,41 +28,22 @@ Route::get('/', function () {
 |
 */
 
+use App\Files;
+
+
 Route::group(['middleware' => ['web', 'auth']], function () {
 
 	Route::resource("activities", "ActivityController");
 	Route::resource("news", "NewsController");
 	
-	Route::get('photos/upload', function() { return View::make('uploads.upload')->with('api_token', Auth::user()->api_token);});
-	Route::get('photos', function() { return View::make('uploads.index')->with('api_token', Auth::user()->api_token);});
+	Route::get('photos/upload', 'FileController@upload');
+	Route::get('photos', 'FileController@index');
+	Route::delete('photos/destroy/{id}', 'FileController@destroy');
 });
 
 Route::group(['middleware' => ['auth:api']], function () {
 
-	Route::post('api/basic', function()
-	{
-	    // Grab our files input
-	    $files = Input::file('files');
-	    // We will store our uploads in public/uploads/basic
-	    $assetPath = '/uploads/basic';
-	    $uploadPath = public_path($assetPath);
-	    // We need an empty arry for us to put the files back into
-	    $results = array();
-
-	    foreach ($files as $file) {
-	    	$fileName = time().'-'.str_random(3).'-'.$file->getClientOriginalName();
-	        // store our uploaded file in our uploads folder
-	        $file->move($uploadPath, $fileName);
-	        // set our results to have our asset path
-	        $name = $assetPath . '/' . $fileName;
-	        $results[] = compact('name');
-	    }
-
-	    // return our results in a files object
-	    return array(
-	        'files' => $results
-	    );
-	});
+	Route::post('api/photos', 'FileController@storeApi');
 
 });
 
@@ -74,5 +54,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('api/activities', 'ActivityController@indexApi');
     Route::get('api/news', 'NewsController@indexApi');
+   	Route::get('api/photos', 'FileController@indexApi');
 
 });

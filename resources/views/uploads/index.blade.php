@@ -34,29 +34,35 @@
                 </div>
                 <table role="presentation" class="table table-striped">
                     <tbody class="files">
-                    <tr class="template-download fade in">
-                        <td>
-                            <span class="preview">
-                                <img src="/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png" width="80" height="80">
-                            </span>
-                        </td>
-                        <td>
-                            <p class="name">
-                                <a href="/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png">/uploads/basic/1456349139-CYR-Screen Shot 2016-02-23 at 12.13.00 PM.png</a>
-                            </p>
-                        </td>
-                        <td>
-                            <span class="size"></span>
-                        </td>
-                        <td>
-                            
-                                <button class="btn btn-danger delete">
-                                    <i class="glyphicon glyphicon-trash"></i>
-                                    <span>Delete</span>
-                                </button>
-                            
-                        </td>
-                    </tr>
+                    @foreach($files as $file)
+                        <tr class="template-download fade in">
+                            <td>
+                                <span class="preview">
+                                    <img src="{{$file->url}}" width="80" height="80">
+                                </span>
+                            </td>
+                            <td>
+                                <p class="name">
+                                    <a href="{{$file->url}}">{{$file->url}}</a>
+                                </p>
+                            </td>
+                            <td>
+                                <span class="size"></span>
+                            </td>
+                            <td>
+                                <form action="/photos/destroy/{{ $file->id }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-danger delete">
+                                            <i class="glyphicon glyphicon-trash"></i>
+                                            <span>Delete</span>
+                                        </button>
+                                </form>
+                                    
+                                
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 <div class="panel panel-default">

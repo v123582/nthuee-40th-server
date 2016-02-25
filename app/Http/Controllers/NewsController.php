@@ -4,7 +4,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\News;
-use App\Activity;
 
 use Illuminate\Http\Request;
 
