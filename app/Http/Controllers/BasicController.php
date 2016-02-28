@@ -10,7 +10,7 @@ class BasicController extends Controller {
 
     public function indexApi()
     {
-		$basic = Basic::all();
+		$basic = Basic::all()[0];
         return $basic;
     }
 
