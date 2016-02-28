@@ -4,12 +4,11 @@
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
                         <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                            <li><a href="https://www.facebook.com/%E6%B8%85%E5%A4%A7%E9%9B%BB%E6%A9%9F-NTHU-EE-192564220822343/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                            <li><a href=""><i class="fa fa-map-marker"></i></a></li>
+                            <li><a href="http://web.ee.nthu.edu.tw/bin/home.php"><i class="fa fa-home"></i></a></li>                        
+                         </ul>
                     </div> 
                 </div>
              </div>
@@ -23,10 +22,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+    
 
-                    <a class="navbar-brand" href="index.html">
-                        <h1><img src="images/logo.png" alt="logo"></h1>
-                    </a>
+                    <div>
+                        <a class="navbar-brand" href="index.html">
+                            <h1><img src="images/logo.png" alt="logo" style="width: 300px"></h1>
+                        </a>
+                        <h1 style="color: #DFB884;padding-left: 320px;padding-top: 25px;margin-top: 0px;">四十週年系慶網站</h2>
+                    </div>
+                    
+                                            
+
                     
                 </div>
                 <div class="collapse navbar-collapse">

@@ -63,12 +63,12 @@
                     <div class="row">
                         <div class="action take-tour">
                             <div class="col-sm-7 wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: fadeInLeft;">
-                                <h1 class="title">Triangle Corporate Template</h1>
-                                <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+<!--                                 <h1 class="title">Triangle Corporate Template</h1>
+                                <p>A responsive, retina-ready &amp; wide multipurpose template.</p> -->
                             </div>
                             <div class="col-sm-5 text-center wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: fadeInRight;">
                                 <div class="tour-button">
-                                    <a href="#" class="btn btn-common">TAKE THE TOUR</a>
+                                    <a href="#" class="btn btn-common">回到頂部</a>
                                  </div>
                             </div>
                         </div>
