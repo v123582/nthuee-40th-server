@@ -6,8 +6,8 @@
         <div class="container">
             <div class="main-slider animate-in">
                 <div class="slide-text">
-                    <h1 id='headerTitle'>緣起</h1>
-                    <p id='headerDescription'>臺灣大學電機系長久以來為社會培養出眾多菁英，在各行各業皆有卓越之表現與貢獻。今年欣逢本系成立70週年，在這個特別的年度，本系將盛大舉辦70週年系慶活動，廣邀系友回娘家，與久別的老師同學們重聚於臺大電機這個大家庭，並了解系上的轉變與成長。系上並舉辦一系列包含論壇、系慶典禮、成果展示、晚會等活動，以呈現1995(50週年)-2015 (70週年)期間臺大電機系於電機工程與科技人才培育的成效，以及系上同仁教學、研究、行政、服務、產學合作的成長歷程與成果，並與各界先進交流分享電機工程教育與科技前瞻發展的趨勢、願景與策略。 並期望藉由本次系慶凝聚系友之向心力，並強化系上師生與系友間交流互動，以承先啟後，並策勵領導未來。</p>
+                    <a href='/about.html'><h1 id='headerTitle'></h1></a>
+                    <p id='headerDescription'></p>
                 </div>
                 <img src="images/home/slider/slide1/house.png" class="img-responsive slider-house" alt="slider image">
                 <img src="images/home/slider/slide1/circle1.png" class="slider-circle1" alt="slider image">
@@ -85,7 +85,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-envelope-o"></i>
                             </div>
-                            <h2 id='state1Title'></h2>
+                            <a href='/state1.html'><h2 id='state1Title'></h2></a>
                             <p id='state1Description'></p>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-heart-o"></i>
                             </div>
-                            <h2 id='state2Title'></h2>
+                            <a href='/state2.html'><h2 id='state2Title'></h2></a>
                             <p id='state2Description'></p>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-star-o"></i>
                             </div>
-                            <h2 id='state3Title'></h2>
+                            <a href='/state3.html'><h2 id='state3Title'></h2></a>
                             <p id='state3Description'></p>
                         </div>
                     </div>
@@ -128,7 +128,6 @@
             var url = 'api/basic';
             $.getJSON(url, function (basic) {
                 var basic = basic;
-                console.log(basic);
                 $('#headerTitle').html(basic.headerTitle);
                 $('#headerDescription').html(basic.headerDescription);
                 $('#state1Title').html(basic.state1Title);

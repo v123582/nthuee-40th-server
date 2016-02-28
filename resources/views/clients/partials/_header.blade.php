@@ -34,10 +34,10 @@
                         <li class="dropdown active"><a href="index.html">Home</a></li>
                         <li><a href="#">風雲七十 <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="about.html">緣起</a></li>
-                                <li><a href="template.html">台大電機系沿革</a></li>
-                                <li><a href="template.html">台大電機系大事記</a></li>
-                                <li><a href="template.html">台大電機系系友及師生傑出表現</a></li>
+                                <li><a href="about.html" id='navheaderTitle'>緣起</a></li>
+                                <li><a href="state1.html" id='navstate1Title'>沿革</a></li>
+                                <li><a href="state2.html" id='navstate2Title'>大事記</a></li>
+                                <li><a href="state3.html" id='navstate3Title'>台大電機系系友及師生傑出表現</a></li>
                             </ul>
                         </li>
                         <li><a href="news.html">最新消息</a></li>
@@ -55,3 +55,22 @@
             </div>
         </div>
     </header>
+    <script type="text/javascript">
+        jQuery(function($) {
+            
+            'use strict';
+
+            console.log('===== Basic Html =====');
+            var url = 'api/basic';
+            $.getJSON(url, function (basic) {
+                var basic = basic;
+                $('#navheaderTitle').html(basic.headerTitle);
+                $('#navstate1Title').html(basic.state1Title);
+                $('#navstate2Title').html(basic.state2Title);
+                $('#navstate3Title').html(basic.state3Title);
+
+            });
+
+
+        });
+    </script>

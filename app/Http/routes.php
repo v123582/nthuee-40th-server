@@ -84,4 +84,14 @@ Route::group(['middleware' => 'web'], function () {
 	    return view('clients/coming-soon');
 	});
 
+   	Route::get('/state1.html', function () {
+	    return view('clients/state1');
+	});
+	Route::get('/state2.html', function () {
+	    return view('clients/state2');
+	});
+	Route::get('/state3.html', function () {
+	    return view('clients/state3');
+	});
+
 });
