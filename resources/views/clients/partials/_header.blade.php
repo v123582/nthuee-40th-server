@@ -26,9 +26,9 @@
 
                     <div>
                         <a class="navbar-brand" href="index.html">
-                            <h1><img src="images/logo.png" alt="logo" style="width: 300px"></h1>
+                            <h1><img src="images/logo.png" alt="logo" id='th40-img'></h1>
                         </a>
-                        <h1 style="color: #DFB884;padding-left: 320px;padding-top: 25px;margin-top: 0px;">四十週年系慶網站</h2>
+                        <h1 id='th40'>四十週年系慶網站</h2>
                     </div>
                     
                                             
