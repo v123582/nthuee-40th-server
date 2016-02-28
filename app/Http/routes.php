@@ -33,6 +33,8 @@ use App\Files;
 
 Route::group(['middleware' => ['web', 'auth']], function () {
 
+	Route::resource("basics", "BasicController");
+	Route::get('basic/edit', 'BasicController@edit');
 	Route::resource("activities", "ActivityController");
 	Route::resource("news", "NewsController");
 	
@@ -55,6 +57,7 @@ Route::group(['middleware' => 'web'], function () {
 	    return view('errors/404');
 	});
     Route::get('/home', 'HomeController@index');
+    Route::get('api/basic', 'BasicController@indexApi');
     Route::get('api/activities', 'ActivityController@indexApi');
     Route::get('api/news', 'NewsController@indexApi');
    	Route::get('api/photos', 'FileController@indexApi');
