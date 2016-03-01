@@ -94,4 +94,8 @@ Route::group(['middleware' => 'web'], function () {
 	    return view('clients/state3');
 	});
 
+	Route::get('/photos.html', function () {
+	    return view('clients/photos');
+	});
+
 });
