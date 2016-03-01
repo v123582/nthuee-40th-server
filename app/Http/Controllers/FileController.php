@@ -31,14 +31,7 @@ class FileController extends Controller {
 		$files = File::all();
 		return $files;
 	}
-
-	public function show()
-{
-	$files = File::all();
-	return view('clients/photos', compact('files'));
-}
-
-
+	
 	public function storeApi(Request $request)
 	{
 		// Grab our files input

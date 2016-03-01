@@ -1,6 +1,3 @@
-<?php
-use App\File;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
