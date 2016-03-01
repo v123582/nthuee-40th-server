@@ -27,7 +27,7 @@
                   <div class="portfolio-wrapper">
                   <div class="portfolio-single">
                       <div class="portfolio-thumb">
-                          <img src="images/portfolio/1.jpg" class="img-responsive" alt="">
+                          <img src="" class="img-responsive" alt="">
                       </div>
                       <div class="portfolio-view">
                           <ul class="nav nav-pills">
@@ -36,7 +36,7 @@
                       </div>
                   </div>
                   <div class="portfolio-info">
-                      <h2>Sailing Vivamus</h2>
+                      <h2></h2>
                   </div>
                       </div>
                   </div>
@@ -67,7 +67,6 @@
                     console.log(photo['url']);
                     panel.find('img').prop('src', photo['url'])
                     panel.find('a').prop('href', photo['url'])
-                    panel.find('.portfolio-info').html('<center><h2>'+index+'</h1></center>');
                     $('.photo').append(panel);
                     panel = $('#panel_default').first().clone();
                 });
