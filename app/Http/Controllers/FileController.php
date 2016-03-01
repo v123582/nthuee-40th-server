@@ -7,30 +7,37 @@ use App\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-use Auth; 
+use Auth;
 use Log;
 
 class FileController extends Controller {
 
 	public function upload()
-	{		
+	{
 		return view('uploads.upload', ['api_token' => Auth::user()->api_token]);
 	}
 
 	public function index()
 	{
 		$files = File::orderBy('id', 'desc')->paginate(10);
-		Log::info('===== FileController: index ====='); 
+		Log::info('===== FileController: index =====');
 		Log::info($files);
 		Log::info('=============================\n\n');
 		return view('uploads.index', compact('files'));
-	}	
+	}
 
     public function indexApi()
 	{
 		$files = File::all();
 		return $files;
-	}	
+	}
+
+	public function show()
+{
+	$files = File::all();
+	return view('clients/photos', compact('files'));
+}
+
 
 	public function storeApi(Request $request)
 	{
@@ -53,8 +60,8 @@ class FileController extends Controller {
 	        $file = new File();
 			$file->url = $name;
 			$file->save();
-			
-			Log::info('===== FileController: store ====='); 
+
+			Log::info('===== FileController: store =====');
 			Log::info($file);
 			Log::info('==============================\n\n');
 
@@ -71,7 +78,7 @@ class FileController extends Controller {
 		$file = File::findOrFail($id);
 		$file->delete();
 
-		Log::info('===== FileController: delete ====='); 
+		Log::info('===== FileController: delete =====');
 		Log::info($file);
 		Log::info('==============================\n\n');
 

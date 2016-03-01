@@ -37,7 +37,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 	Route::get('basic/edit', 'BasicController@edit');
 	Route::resource("activities", "ActivityController");
 	Route::resource("news", "NewsController");
-	
+
 	Route::get('photos/upload', 'FileController@upload');
 	Route::get('photos', 'FileController@index');
 	Route::delete('photos/destroy/{id}', 'FileController@destroy');
@@ -94,8 +94,9 @@ Route::group(['middleware' => 'web'], function () {
 	    return view('clients/state3');
 	});
 
-	Route::get('/photos.html', function () {
-	    return view('clients/photos');
-	});
+  Route::get('/photos.html', 'FileController@show');
+	// Route::get('/photos.html', function () {
+	//     return view('clients/photos');
+	// });
 
 });
