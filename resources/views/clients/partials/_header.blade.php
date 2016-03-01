@@ -40,14 +40,15 @@
                         <li class="dropdown active"><a href="index.html">Home</a></li>
                         <li><a href="#">風雲七十 <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="about.html" id='navheaderTitle'>緣起</a></li>
-                                <li><a href="state1.html" id='navstate1Title'>沿革</a></li>
-                                <li><a href="state2.html" id='navstate2Title'>大事記</a></li>
-                                <li><a href="state3.html" id='navstate3Title'>台大電機系系友及師生傑出表現</a></li>
+                                <li><a href="about.html" id='navheaderTitle'></a></li>
+                                <li><a href="state1.html" id='navstate1Title'></a></li>
+                                <li><a href="state2.html" id='navstate2Title'></a></li>
+                                <li><a href="state3.html" id='navstate3Title'></a></li>
                             </ul>
                         </li>
                         <li><a href="news.html">最新消息</a></li>
                         <li><a href="activities.html">系列活動</a></li>
+                        <li><a href="photos.html">相片集錦</a></li>
                     </ul>
                 </div>
                 <div class="search">
