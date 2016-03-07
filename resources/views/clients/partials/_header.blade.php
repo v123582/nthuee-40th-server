@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown active"><a href="index.html">Home</a></li>
-                        <li><a href="#">風雲七十 <i class="fa fa-angle-down"></i></a>
+                        <li><a href="#">風雲四十 <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="about.html" id='navheaderTitle'></a></li>
                                 <li><a href="state1.html" id='navstate1Title'></a></li>
