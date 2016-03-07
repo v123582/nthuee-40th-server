@@ -85,7 +85,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-envelope-o"></i>
                             </div>
-                            <a href='/state1.html'><h2 id='state1Title'></h2></a>
+                            <a href='state1.html'><h2 id='state1Title'></h2></a>
                             <p id='state1Description'></p>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-heart-o"></i>
                             </div>
-                            <a href='/state2.html'><h2 id='state2Title'></h2></a>
+                            <a href='state2.html'><h2 id='state2Title'></h2></a>
                             <p id='state2Description'></p>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                             <div class="icon-wrapper">
                                 <i class="fa fa-2x fa-star-o"></i>
                             </div>
-                            <a href='/state3.html'><h2 id='state3Title'></h2></a>
+                            <a href='state3.html'><h2 id='state3Title'></h2></a>
                             <p id='state3Description'></p>
                         </div>
                     </div>
