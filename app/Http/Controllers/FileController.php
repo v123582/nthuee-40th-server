@@ -20,9 +20,6 @@ class FileController extends Controller {
 	public function index()
 	{
 		$files = File::orderBy('id', 'desc')->paginate(10);
-		Log::info('===== FileController: index =====');
-		Log::info($files);
-		Log::info('=============================\n\n');
 		return view('uploads.index', compact('files'));
 	}
 
@@ -54,10 +51,6 @@ class FileController extends Controller {
 			$file->url = $name;
 			$file->save();
 
-			Log::info('===== FileController: store =====');
-			Log::info($file);
-			Log::info('==============================\n\n');
-
 	    }
 
 	    // return our results in a files object
@@ -70,10 +63,6 @@ class FileController extends Controller {
 	{
 		$file = File::findOrFail($id);
 		$file->delete();
-
-		Log::info('===== FileController: delete =====');
-		Log::info($file);
-		Log::info('==============================\n\n');
 
 		return redirect('photos');
 	}

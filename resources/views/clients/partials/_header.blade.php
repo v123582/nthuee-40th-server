@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown active"><a href="index.html">Home</a></li>
-                        <li><a href="#">風雲四十 <i class="fa fa-angle-down"></i></a>
+                        <li><a href="#">風雲四十<i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a href="about.html" id='navheaderTitle'></a></li>
                                 <li><a href="state1.html" id='navstate1Title'></a></li>
@@ -71,6 +71,7 @@
             var url = 'api/basic';
             $.getJSON(url, function (basic) {
                 var basic = basic;
+                $('#th40').html(basic.headerTitle);
                 $('#navheaderTitle').html(basic.headerTitle);
                 $('#navstate1Title').html(basic.state1Title);
                 $('#navstate2Title').html(basic.state2Title);

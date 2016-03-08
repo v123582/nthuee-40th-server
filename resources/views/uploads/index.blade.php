@@ -17,7 +17,7 @@
                 <div class="row fileupload-buttonbar">
                     <div class="col-lg-7">
                         <!-- The fileinput-button span is used to style the file input field as button -->
-                        <a type="button" href="/photos/upload" class="btn btn-primary start">
+                        <a type="button" href="{{url('/photos/upload')}}" class="btn btn-primary start">
                             <i class="glyphicon glyphicon-upload"></i>
                             <span>上傳檔案</span>
                         </a>
@@ -38,7 +38,7 @@
                         <tr class="template-download fade in">
                             <td>
                                 <span class="preview">
-                                    <img src="{{$file->url}}" width="80" height="80">
+                                    <img src="{{url('/')}}{{$file->url}}" width="80" height="80">
                                 </span>
                             </td>
                             <td>
@@ -50,7 +50,7 @@
                                 <span class="size"></span>
                             </td>
                             <td>
-                                <form action="/photos/destroy/{{ $file->id }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                <form action="{{url('/photos/destroy/')}}/{{ $file->id }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-danger delete">
@@ -92,21 +92,21 @@
 
 @section('javascripts')
 
-    <script src="/bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js')}}"></script>
 
     <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js')}}"></script>
 
 
 @endsection

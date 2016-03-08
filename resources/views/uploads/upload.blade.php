@@ -35,7 +35,7 @@
                                 <i class="glyphicon glyphicon-ban-circle"></i>
                                 <span>Cancel upload</span>
                             </button>
-                            <a type="button" href="/photos" class="btn btn-info">
+                            <a type="button" href="{{url('/photos')}}" class="btn btn-info">
                                 <i class="glyphicon glyphicon-th"></i>
                                 <span>所有圖片</span>
                             </a>
@@ -111,12 +111,12 @@
                 <tr class="template-download fade">
                     <td>
                         <span class="preview">
-                            <img src="{%=file.name%}" width='80' height='80'>
+                            <img src="{{url('/')}}{%=file.name%}" width='80' height='80'>
                         </span>
                     </td>
                     <td>
                         <p class="name">
-                            <a href="{%=file.name%}">{%=file.name%}</a>
+                            <a href="{{url('/')}}{%=file.name%}">{{url('/')}}{%=file.name%}</a>
                         </p>
                     </td>
                     <td>
@@ -147,27 +147,27 @@
 
 @section('javascripts')
 
-    <script src="/bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/vendor/jquery.ui.widget.js')}}"></script>
 
     <script src="//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
     <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
-    <script src="/bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.iframe-transport.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-process.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-image.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-audio.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-video.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-validate.js')}}"></script>
+    <script src="{{url('/bower_compoents/blueimp-file-upload/js/jquery.fileupload-ui.js')}}"></script>
 
     <script>
         $(function () {
             'use strict';
 
-            var url = '/api/photos?api_token={{ $api_token }}';
+            var url = '{{url("/api/photos?api_token=")}}{{ $api_token }}';
 
             // Initialize the jQuery File Upload widget:
             $('#fileupload').fileupload({

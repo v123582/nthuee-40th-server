@@ -65,8 +65,8 @@
                 // console.log(panel_default);
                 allPhotos.forEach(function (photo, index, allPhotos) {
                     console.log(photo['url']);
-                    panel.find('img').prop('src', photo['url'])
-                    panel.find('a').prop('href', photo['url'])
+                    panel.find('img').prop('src', photo['url'].substring(1));
+                    panel.find('a').prop('href', photo['url'].substring(1));
                     $('.photo').append(panel);
                     panel = $('#panel_default').first().clone();
                 });
